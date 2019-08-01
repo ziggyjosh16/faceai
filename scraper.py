@@ -9,13 +9,13 @@ def getimages(searchname,filedir,num):
          os.mkdir(filedir)
     except:
         print("Directory Already Exists.")
-    for i in range(0,num): #num=3 就是前三百           #q        start
+    for i in range(0,num): 
         res=requests.get(dataurl.format(searchname,i*100))
         soup=BeautifulSoup(res.text, "lxml")        
         for ele in soup.select('img'):    
-            imgurl=ele.get('data-src') or ele.get('src') #抓src的tag
+            imgurl=ele.get('data-src') or ele.get('src')
             with open(filedir+'/'+filedir+str(count)+'.jpg','wb') as f:  
-                res2=requests.get(imgurl) #抓取圖片內容   
+                res2=requests.get(imgurl)   
                 f.write(res2.content)
                 f.close()
             count=count+1            

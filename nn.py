@@ -26,8 +26,8 @@ model.compile(optimizer = 'adam',
 model.summary()
 
 train_datagen = ImageDataGenerator(rescale = 1./255,
-                                   shear_range = 0.2,  #魚度  
-                                   zoom_range = 0.2,   #縮放   
+                                   shear_range = 0.2,    
+                                   zoom_range = 0.2,   
                                    horizontal_flip = True 
                                   )
 test_datagen = ImageDataGenerator(rescale = 1./255)
@@ -73,7 +73,7 @@ for x,y,w,h in faces:
     res = model.predict_classes(target_image)[0]
     cv.rectangle(img,(x,y),(x+w,y+h),(14,201,255),2)  
     cv.putText(img,name_dic.get(res), (x + int(w/3)-70, y-10), font, 1.5, (14,201,255), 3) 
-    
+
 plt.figure(figsize=(30,20)) 
 #plt.imshow(img)
 plt.imshow(cv.cvtColor(img, cv.COLOR_BGR2RGB)) 
