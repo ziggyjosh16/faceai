@@ -21,10 +21,10 @@ def getimages(searchname,filedir,num):
             count=count+1            
 
 
-
+print("Working.")
 getimages("rihanna","rihanna",1)
 getimages("beyonce", "beyonce",1)
-     
+print("Done.")
 
 
 
