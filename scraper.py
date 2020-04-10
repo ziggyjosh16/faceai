@@ -22,8 +22,8 @@ def getimages(searchname,filedir,num):
 
 
 print("Working.")
-getimages("rihanna","rihanna",1)
-getimages("beyonce", "beyonce",1)
+getimages("group photo","group_photos",2)
+# getimages("beyonce", "beyonce",1)
 print("Done.")
 
 
